@@ -1,0 +1,126 @@
+/* ============================================
+   INPUT FIELD
+   ============================================ */
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field__label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+.field__req {
+  color: var(--danger);
+  font-weight: 400;
+}
+
+.field__wrap {
+  position: relative;
+}
+
+.field__input {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--r-md);
+  font-size: 14.5px;
+  font-family: var(--font-body);
+  color: var(--text);
+  background: var(--surface);
+  line-height: 1.5;
+  transition:
+    border-color var(--t-base),
+    box-shadow var(--t-base),
+    background var(--t-base);
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.field__input::placeholder {
+  color: var(--text-muted);
+}
+
+.field__input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.10);
+  background: #FAFCFF;
+}
+
+/* Error state */
+.field--error .field__input {
+  border-color: var(--danger);
+  background: #FFFAFA;
+}
+.field--error .field__input:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.10);
+}
+
+/* Password toggle */
+.field__eye {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--r-sm);
+  transition: color var(--t-base), background var(--t-base);
+  line-height: 0;
+}
+.field__eye:hover {
+  color: var(--text-secondary);
+  background: var(--border-light);
+}
+.field__eye:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 1px;
+}
+
+/* Padding for password inputs */
+.field__wrap:has(.field__eye) .field__input {
+  padding-right: 42px;
+}
+
+/* Error message */
+.field__error {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--danger);
+  line-height: 1.4;
+}
+
+/* ============================================
+   DARK MODE — INPUT FIELD
+   ============================================ */
+
+[data-theme="dark"] .field__input {
+  background: #0F172A;
+  border-color: var(--border);
+  color: var(--text);
+}
+
+[data-theme="dark"] .field__input:focus {
+  background: #111D30;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+[data-theme="dark"] .field--error .field__input {
+  background: rgba(248, 113, 113, 0.06);
+}
