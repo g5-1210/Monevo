@@ -1,0 +1,31 @@
+.budget-summary {
+  display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--space-6) var(--space-10);
+  padding: var(--space-6); margin-bottom: var(--space-8); align-items: center;
+}
+.budget-summary__label { font-size: 13.5px; color: var(--text-secondary); font-weight: 500; }
+.budget-summary__value { font-family: var(--font-display); font-size: 34px; font-weight: 700; letter-spacing: -1px; line-height: 1.2; margin: 4px 0 var(--space-4); }
+.budget-summary__value span { font-size: 16px; font-weight: 500; color: var(--text-secondary); letter-spacing: 0; }
+.budget-summary__foot { margin-top: var(--space-3); font-size: 13px; color: var(--text-secondary); }
+.budget-summary__stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); }
+.budget-summary__stats dt { font-size: 12.5px; color: var(--text-secondary); margin-bottom: 4px; }
+.budget-summary__stats dd { font-family: var(--font-display); font-size: 19px; font-weight: 700; letter-spacing: -0.4px; }
+.budget-summary__stats dd.is-over { color: var(--danger-text); }
+.budget-summary__status { grid-column: 1 / -1; list-style: none; display: flex; flex-wrap: wrap; gap: var(--space-2); padding-top: var(--space-4); border-top: 1px solid var(--border); }
+
+.section-title { font-family: var(--font-display); font-size: 17px; font-weight: 700; letter-spacing: -0.2px; margin-bottom: var(--space-4); }
+
+.unbudgeted { margin-top: var(--space-8); }
+.unbudgeted__list { list-style: none; padding: var(--space-3) var(--space-6) var(--space-4); }
+.unbudgeted__list li { display: flex; align-items: center; gap: var(--space-3); padding: var(--space-3) 0; border-top: 1px solid var(--border-light); font-size: 14px; }
+.unbudgeted__list li:first-child { border-top: none; }
+.unbudgeted__name { flex: 1; font-weight: 600; }
+
+@media (max-width: 899px) {
+  .budget-summary { grid-template-columns: 1fr; gap: var(--space-5); }
+}
+@media (max-width: 767px) {
+  .budget-summary { padding: var(--space-5) var(--space-4); }
+  .budget-summary__value { font-size: 28px; }
+  .budget-summary__stats dd { font-size: 16px; }
+  .unbudgeted__list { padding-left: var(--space-4); padding-right: var(--space-4); }
+}

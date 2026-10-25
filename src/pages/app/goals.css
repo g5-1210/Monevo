@@ -1,0 +1,17 @@
+.goals-summary {
+  display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--space-6) var(--space-10);
+  padding: var(--space-6); margin-bottom: var(--space-8); align-items: center;
+}
+.goals-summary__label { font-size: 13.5px; color: var(--text-secondary); font-weight: 500; }
+.goals-summary__value { font-family: var(--font-display); font-size: 34px; font-weight: 700; letter-spacing: -1px; line-height: 1.2; margin: 4px 0 var(--space-4); }
+.goals-summary__value span { font-size: 16px; font-weight: 500; color: var(--text-secondary); letter-spacing: 0; }
+.goals-summary__foot { margin-top: var(--space-3); font-size: 13px; color: var(--text-secondary); }
+.goals-summary__stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); }
+.goals-summary__stats dt { font-size: 12.5px; color: var(--text-secondary); margin-bottom: 4px; }
+.goals-summary__stats dd { font-family: var(--font-display); font-size: 19px; font-weight: 700; letter-spacing: -0.4px; }
+@media (max-width: 899px) { .goals-summary { grid-template-columns: 1fr; gap: var(--space-5); } }
+@media (max-width: 767px) {
+  .goals-summary { padding: var(--space-5) var(--space-4); }
+  .goals-summary__value { font-size: 28px; }
+  .goals-summary__stats dd { font-size: 16px; }
+}
