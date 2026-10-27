@@ -1,35 +1,116 @@
-# React + Vite
+# Monevo — Personal Finance Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+**Take control of your money. Build better financial habits.**
 
-Currently, two official plugins are available:
+Monevo is a modern personal finance management application designed to help users organize their finances through a clean, intuitive, and interactive dashboard. It brings essential financial tools together in one place, making it easier to track spending, manage budgets, monitor financial goals, and stay organized.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Features
 
-## React Compiler
+- **Dashboard** — Get an overview of your financial activity.
+- **Transaction Management** — Organize and review financial transactions.
+- **Budget Tracking** — Manage budgets and keep spending organized.
+- **Financial Goals** — Set and monitor progress toward financial goals.
+- **Recurring Payments** — Keep track of recurring expenses.
+- **Authentication Interface** — Dedicated login and signup pages with form validation.
+- **Settings & Account Management** — Manage account preferences and clear account data.
+- **Theme Support** — Switch between supported visual themes.
+- **Demo Data** — Load sample financial data to explore the dashboard without entering everything manually.
+- **Responsive UI** — A modern interface designed for a smooth user experience.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack
 
-## Expanding the Oxlint configuration
+- **React** — Component-based user interface
+- **JavaScript** — Application logic and interactivity
+- **CSS** — Styling and layout
+- **Vite** — Development server and build tooling
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## 🚀 Getting Started
 
-## Authenticated app (dashboard & features)
+Follow these steps to run Monevo locally.
 
-Routes: `/dashboard`, `/transactions`, `/budgets`, `/goals`, `/analytics`, `/recurring`, `/settings` (guarded; log in first).
+### Prerequisites
 
-- `src/data/` — demo data (swap for API calls inside `context/DataContext.jsx`)
-- `src/context/` — `AuthContext` (demo session flag), `DataContext` (state + actions + formatters), `UIContext` (dialogs), `ToastContext`
-- `src/components/app/` — layout shell, charts (dependency-free SVG), shared UI primitives
-- `src/components/forms/` — transaction, budget, goal and recurring forms
-- `src/pages/app/` — one file + one CSS file per screen
-- `src/utils/` — date, format and finance helpers
+- [Node.js](https://nodejs.org/)
+- npm
+- Git
 
-Tip: open any app route with `?simulate-error` to preview the error state.
+### Installation
 
-## Accounts & data storage (no backend yet)
+**1. Clone the repository**
 
-- Accounts are stored in this browser (`monevo-users` in localStorage) by `src/utils/authStore.js`; passwords are salted and hashed with PBKDF2-SHA256, never stored in plain text. **This is client-side only and not a replacement for server auth.** `AuthContext` is the only thing the UI talks to, so a real API can replace `authStore.js` later.
-- Each user's finance data and preferences are stored under `monevo:data:<userId>` / `monevo:prefs:<userId>`. New accounts start empty; Settings → Account has "Load sample data".
-- Settings → Account → **Clear Account Data** removes only the signed-in user's data and preferences. **Delete account** also removes the login.
+```bash
+git clone https://github.com/g5-1210/Monevo.git
+```
+
+**2. Navigate to the project directory**
+
+```bash
+cd Monevo
+```
+
+**3. Install dependencies**
+
+```bash
+npm install
+```
+
+**4. Start the development server**
+
+```bash
+npm run dev
+```
+
+Open the local URL displayed in your terminal to explore the application.
+
+## 📁 Project Structure
+
+```text
+Monevo/
+├── public/                 # Static assets
+├── src/
+│   ├── components/         # Reusable UI components
+│   ├── context/            # Shared application state
+│   ├── data/               # Sample and application data
+│   ├── pages/              # Application pages
+│   ├── utils/              # Utility functions
+│   ├── App.jsx             # Main application component
+│   └── main.jsx            # Application entry point
+├── index.html
+├── package.json
+├── vite.config.js
+└── README.md
+```
+
+## 🧪 Exploring Demo Data
+
+Use the **Load Sample Data** option in Settings to explore the application's financial dashboard with sample transactions, budgets, goals, and recurring payments.
+
+Use the account data clearing option when you want to reset the current application data.
+
+**Note:** Sample-data and account-clearing actions can replace or remove existing application data. Review any confirmation prompt before proceeding.
+
+## 🗺️ Project Status
+
+Monevo is an evolving project focused on building a practical, user-friendly personal finance experience. The frontend includes the main dashboard experience, account interfaces, financial management sections, and settings.
+
+Backend integration and production-readiness should be verified separately before treating the application as a complete production finance platform.
+
+## 🔮 Future Improvements
+
+- Backend integration and persistent user accounts
+- Secure authentication and session management
+- Improved financial analytics and visual reports
+- Additional accessibility and responsive-design improvements
+- Automated testing and production deployment
+
+## 🤝 Contributing
+
+Suggestions and improvements are welcome. Feel free to fork the repository, create a feature branch, and submit a pull request.
+
+## 📄 License
+
+No license has been specified yet. All rights are reserved by default unless a license is added to the repository.
+
+---
+
+**Monevo** — Manage your money with more clarity.
